@@ -1,7 +1,36 @@
 {
-  "extends": "@mixmaxhq/ts-config/tsconfig.json",
   "compilerOptions": {
-    "outDir": "dist/node"
+    "outDir": "dist",
+    "target": "es2017",
+    "module": "commonjs",
+    "importHelpers": true,
+    "alwaysStrict": true,
+    "declaration": true,
+    "sourceMap": true,
+    "declarationMap": true,
+
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+
+    "jsx": "react",
+    "allowJs": true,
+    "resolveJsonModule": true,
+
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "strict": true,
+    "noImplicitReturns": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "useUnknownInCatchVariables": false
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules", "dist", "**/*.test.ts"]

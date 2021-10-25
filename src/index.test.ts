@@ -1,20 +1,16 @@
-import nock from 'nock';
-import Environment from '@mixmaxhq/environment';
-import API from '.';
-beforeAll(() => {
-  nock.disableNetConnect();
-  nock('https://app-local.mixmax.com').get('/health/elb').reply(200, '');
-});
-describe('API', () => {
-  let client;
-  beforeEach(() => {
-    client = new API({
-      environment: Environment.LOCAL,
+import SALESFORCE_IP_RANGE from './index';
+import { SALESFORCE_IP_RANGE as NAMED_EXPORT } from './index';
+
+describe('SALESFORCE_IP_RANGE', () => {
+  describe('assert exports are correct', () => {
+    it('exports the ip list via default export', async () => {
+      expect(SALESFORCE_IP_RANGE).not.toBe(undefined);
+      expect(SALESFORCE_IP_RANGE.length > 0).toBe(true);
     });
-  });
-  describe('service functions', () => {
-    it('should make a request to the endpoint', async () => {
-      await expect(client.checkAppHealth()).resolves.toBeTruthy();
+
+    it('exports the ip list via named export', async () => {
+      expect(NAMED_EXPORT).not.toBe(undefined);
+      expect(NAMED_EXPORT.length > 0).toBe(true);
     });
   });
 });

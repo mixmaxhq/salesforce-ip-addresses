@@ -1,45 +1,136 @@
-import got from 'got';
+/**
+ * The IP range of known salesforce IPs. Please, help keep this list updated pushing
+ * PR's everytime you see divergences between this list and the list on the source.
+ * Source: https://help.salesforce.com/s/articleView?id=000321501&type=1
+ * Last updated At: 2021-10-25
+ */
+export const SALESFORCE_IP_RANGE = [
+  // ARIN
+  '13.108.0.0/14',
+  '66.231.80.0/20',
+  '68.232.192.0/20',
+  '96.43.144.0/20',
+  '128.17.0.0/16',
+  '128.245.0.0/16',
+  '136.146.0.0/15',
+  '198.245.80.0/20',
+  '199.122.120.0/21',
+  '204.14.232.0/21',
+  '34.226.36.48/28',
+  '34.211.108.32/28',
+  '13.58.135.64/28',
+  '13.56.32.176/28',
+  '35.182.14.32/28',
 
-import type { EnvironmentName } from '@mixmaxhq/environment';
-import Environment from '@mixmaxhq/environment';
-import SDC from '@mixmaxhq/statsd-client';
-export default class ExampleModule {
-  env: Environment;
-  sdc: SDC;
+  // Canada (Public Cloud)
+  '52.60.248.0/22',
+  '52.60.252.0/22',
+  '3.98.2.135/32',
+  '3.98.8.160/32',
+  '3.97.226.192/32',
 
-  constructor({ environment }: { environment: EnvironmentName }) {
-    this.env = new Environment({
-      raw: environment,
-    });
-    this.sdc = new SDC(this.env.statsd('serviceAPIClient'));
-  }
+  // Australia (Public Cloud)
+  '13.210.4.0/22',
+  '13.210.8.0/22',
+  '13.210.180.120/32',
+  '13.238.98.67/32',
+  '54.252.37.181/32',
 
-  /**
-   * An example method to demonstrate how we generally expose functionality that depends on
-   * application-bound state (e.g. the current environment) without requiring complex cross-linking
-   * in the build process.
-   *
-   * @return A promise that returns a boolean representing whether the app service is reachable.
-   *   As this is an example, it doesn't attempt to provide any diagnostic information.
-   */
-  async checkAppHealth(): Promise<boolean> {
-    try {
-      await got(`${this.env.services.app}/health/elb`, {
-        followRedirect: false,
-        timeout: 5000,
-        retry: 0,
-      });
-    } catch (err) {
-      if (
-        err instanceof Error &&
-        ['RequestError', 'HTTPError', 'UnsupportedProtocolError', 'TimeoutError'].includes(err.name)
-      ) {
-        return false;
-      }
+  // India (Public Cloud)
+  '3.6.203.25/32',
+  '13.127.212.138/32',
+  '15.206.226.165/32',
+  '15.207.181.18/32',
+  '15.207.182.186/32',
+  '65.0.79.252/32',
 
-      throw err;
-    }
+  // US-East (Public Cloud)
+  '3.225.240.254/32',
+  '18.204.28.162/32',
+  '18.214.12.209/32',
+  '34.202.86.120/32',
+  '34.204.111.166/32',
+  '52.44.156.44/32',
 
-    return true;
-  }
-}
+  // US-West (Public Cloud)
+  '44.233.69.21/32',
+  '44.237.79.66/32',
+  '52.36.20.11/32',
+  '35.80.213.208/32',
+  '35.161.141.162/32',
+  '44.234.249.148/32',
+
+  // RIPE
+  '85.222.128.0/19',
+  '159.92.128.0/17',
+  '160.8.0.0/16',
+  '161.71.0.0/17',
+  '163.76.128.0/17',
+  '163.79.128.0/17',
+  '185.79.140.0/22',
+  '34.253.190.64/28',
+  '35.158.127.48/28',
+  '35.176.92.16/28',
+  '13.36.84.96/28',
+
+  // APNIC
+  '101.53.160.0/19',
+  '104.161.128.0/17',
+  '161.32.64.0/18',
+  '161.32.128.0/17',
+  '161.71.128.0/17',
+  '182.50.76.0/22',
+  '202.129.242.0/23',
+  '13.113.196.48/28',
+  '13.228.64.80/28',
+  '13.124.145.0/28',
+  '13.126.23.64/28',
+  '13.210.3.208/28',
+  '35.73.89.117/32',
+  '18.181.43.11/32',
+  '54.95.206.252/32',
+
+  // LACNIC
+  '54.233.205.0/28',
+
+  // USA - Connections to Salesforce
+  '3.228.190.251',
+  '34.206.116.149',
+  '35.174.143.92',
+  '52.203.77.201',
+  '54.156.107.163',
+  '54.158.77.4',
+  '54.163.166.54',
+  '54.83.60.38',
+  '107.21.202.122',
+
+  // USA - Connections from Salesforce
+  '3.225.151.145',
+  '3.225.240.254/32',
+  '18.204.28.162/32',
+  '18.211.105.61',
+  '34.197.58.108',
+  '34.204.111.166/32',
+  '52.3.16.30',
+  '52.22.251.194',
+  '52.70.135.185',
+
+  // IPv4 Network	IPv4 IP Range
+  '13.109.128.0/19',
+  '13.109.160.0/21',
+  '13.109.192.0/19',
+  '101.53.176.0/20',
+  '160.8.0.0/21',
+  '161.71.16.0/20',
+  '161.71.40.0/22',
+  '161.71.176.0/21',
+  '182.50.76.0/22',
+
+  // myTrailhead Outbound IP Addresses
+  '52.6.127.225',
+  '52.205.38.38',
+  '52.205.40.33',
+  '52.205.41.207',
+];
+
+export default SALESFORCE_IP_RANGE;

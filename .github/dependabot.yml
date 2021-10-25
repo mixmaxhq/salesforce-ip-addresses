@@ -14,15 +14,6 @@ updates:
   open-pull-requests-limit: 10
   versioning-strategy: increase
   ignore:
-  - dependency-name: flow-bin
-    versions:
-    - 0.143.1
-    - 0.144.0
-    - 0.145.0
-    - 0.146.0
-    - 0.147.0
-    - 0.148.0
-    - 0.149.0
   - dependency-name: "@babel/core"
     versions:
     - 7.12.10
@@ -40,20 +31,6 @@ updates:
     versions:
     - 4.0.1
     - 4.0.2
-  - dependency-name: nock
-    versions:
-    - 13.0.10
-    - 13.0.6
-    - 13.0.7
-    - 13.0.8
-    - 13.0.9
-  - dependency-name: "@mixmaxhq/environment"
-    versions:
-    - 3.13.0
-    - 3.14.0
-  - dependency-name: got
-    versions:
-    - 11.8.1
   - dependency-name: npm-user-validate
     versions:
     - 1.0.1
