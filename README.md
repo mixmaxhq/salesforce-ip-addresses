@@ -1,21 +1,28 @@
-# Template: Shared Module
+# salesforce-ip-addresses
+---
+An array representing the `Salesforce IP Addresses to Allow`, from [SFDC docs](https://help.salesforce.com/s/articleView?id=000321501&type=1). Use this when in need of allow-listing these IP addresses. Contributions to keep this list updated are welcome 😀.
 
-This repository contains the template structure and boilerplate for a new shared module. It can run
-as-is to give you a sense for how everything functions, but you'll want to follow the instructions
-under "How to use."
+>Last update: 2021-10-25. If the last update on [this doc](https://help.salesforce.com/s/articleView?id=000321501&type=1) is higher than this date, consider updating this repo.
 
-## How to use
+## Install
 
-1. Click Github's "Use this Template" button on the [project homepage](https://github.com/mixmaxhq/template-module).
-2. Git clone the new repo locally
-3. Run the new project's initialization script: `./init.sh <name of project>`
-4. Remove the `private` flag from `package.json` and update the `description`.
-5. If creating a new public module, change the `publishConfig`'s `access` field in the `package.json` to
-   `public` - this will cause `semantic-release` to publish it for any user of `npm`. Add in the
-   appropriate `LICENSE` file and update the `license` field in `package.json`.
-6. Remove the example code from `src/index.js`.
-7. Update the README to document the modules's purpose and API.
-<!-- END_TEMPLATE -->
+`npm install salesforce-ip-addresses --save`
+
+## Usage
+This module export, as Default and Named, an array containing the IP addresses.
+```js
+const SALESFORCE_IP_RANGE = require('salesforce-ip-addresses');
+// or
+import SALESFORCE_IP_RANGE from 'salesforce-ip-addresses';
+// or
+import { SALESFORCE_IP_RANGE } from 'salesforce-ip-addresses';
+
+console.log(SALESFORCE_IP_RANGE);
+```
+
+## Running tests
+
+Assert, after making your changes, that this repo is exporting as expected via `npm run test`
 
 ## Building
 
@@ -24,10 +31,6 @@ under "How to use."
 Outputs a commonjs-compatible bundle to `dist/index.js`.
 
 While developing, you can also run `npm run watch` to continually build as you save files.
-
-## Running tests
-
-`npm test`
 
 ## Publishing
 
