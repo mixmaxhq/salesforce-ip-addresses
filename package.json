@@ -1,7 +1,7 @@
 {
   "name": "salesforce-ip-addresses",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.1",
   "description": "A module to expose the list of Salesforce IP addresses from the official docs https://help.salesforce.com/s/articleView?id=000321501&type=1",
   "main": "dist/index.js",
   "files": [
