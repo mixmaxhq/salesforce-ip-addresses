@@ -1,3 +1,10 @@
+### [1.0.1-beta.1](https://github.com/mixmaxhq/salesforce-ip-addresses/compare/v1.0.0...v1.0.1-beta.1) (2023-03-08)
+
+
+### Bug Fixes
+
+* rename branch ([e399ebd](https://github.com/mixmaxhq/salesforce-ip-addresses/commit/e399ebda4ead35a561870c1cc5140f8ea5f6f8bc))
+
 ## 1.0.0 (2021-10-25)
 
 
