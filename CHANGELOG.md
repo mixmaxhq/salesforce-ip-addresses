@@ -1,3 +1,10 @@
+### [1.0.1](https://github.com/mixmaxhq/salesforce-ip-addresses/compare/v1.0.0...v1.0.1) (2023-03-14)
+
+
+### Bug Fixes
+
+* migrate to github actions ([#9](https://github.com/mixmaxhq/salesforce-ip-addresses/issues/9)) ([a7f7b78](https://github.com/mixmaxhq/salesforce-ip-addresses/commit/a7f7b7811e58005095965d7d85162f7eca2aa789))
+
 ## 1.0.0 (2021-10-25)
 
 
