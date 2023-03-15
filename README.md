@@ -32,7 +32,8 @@ Outputs a commonjs-compatible bundle to `dist/index.js`.
 
 While developing, you can also run `npm run watch` to continually build as you save files.
 
-## Publishing
+## Publishing a new version
 
-Merging to master will automatically publish the package if commits with non-trivial changes have
-been introduced (per [commit conventions](https://www.conventionalcommits.org)).
+```
+GH_TOKEN=xxx npx semantic-release --no-ci
+```
