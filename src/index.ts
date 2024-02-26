@@ -2,7 +2,7 @@
  * The IP range of known salesforce IPs. Please, help keep this list updated pushing
  * PR's everytime you see divergences between this list and the list on the source.
  * Source: https://help.salesforce.com/s/articleView?id=000321501&type=1
- * Last updated At: 2021-10-25
+ * Last updated At: 2023-01-12
  */
 export const SALESFORCE_IP_RANGE = [
   // ARIN
@@ -72,7 +72,9 @@ export const SALESFORCE_IP_RANGE = [
   '35.158.127.48/28',
   '35.176.92.16/28',
   '13.36.84.96/28',
-
+  '13.37.59.29/32',
+  '15.236.110.244/32',
+  '15.236.160.173/32',
   // APNIC
   '101.53.160.0/19',
   '104.161.128.0/17',
@@ -89,10 +91,14 @@ export const SALESFORCE_IP_RANGE = [
   '35.73.89.117/32',
   '18.181.43.11/32',
   '54.95.206.252/32',
-
+  '54.254.118.123/32',
+  '13.251.9.241/32',
+  '13.250.175.171/32',
   // LACNIC
   '54.233.205.0/28',
-
+  '177.71.229.247/32',
+  '18.228.66.156/32',
+  '18.228.207.180/32',
   // USA - Connections to Salesforce
   '3.228.190.251',
   '34.206.116.149',
