@@ -1,3 +1,8 @@
 {
-  "extends": ["mixmax/node/withJest", "mixmax/node/disable-require-atomic", "mixmax/typescript"]
+  "extends": ["mixmax/node/withJest", "mixmax/node/disable-require-atomic", "mixmax/typescript"],
+  "settings": {
+    "jest": {
+      "version": 29
+    }
+  }
 }
